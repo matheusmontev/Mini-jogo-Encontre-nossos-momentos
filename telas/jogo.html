@@ -30,7 +30,10 @@
     <!-- Game Header / Stats -->
     <div class="game-stats">
       <div class="game-stats-box">
-        <p class="game-stats-text">Tentativas: <span class="text-secondary">0</span></p>
+        <p class="game-stats-text">Tentativas: <span id="contador-tentativas" class="text-secondary">0</span></p>
+      </div>
+      <div class="game-stats-box">
+        <p class="game-stats-text">Tempo: <span id="contador-tempo" class="text-secondary">00:00</span></p>
       </div>
     </div>
 
@@ -40,151 +43,7 @@
     </div>
 
     <!-- Memory Grid (4x3) -->
-    <div class="game-grid">
-      <!-- Card 1 -->
-      <div class="game-card">
-        <div class="card-inner">
-          <div class="card-back">
-            <div class="romantic-pattern absolute inset-0"></div>
-            <span class="material-symbols-outlined" data-icon="favorite">favorite</span>
-          </div>
-          <div class="card-front">
-            <span class="material-symbols-outlined" data-icon="card_giftcard">card_giftcard</span>
-          </div>
-        </div>
-      </div>
-      <!-- Card 2 (Flipped Example) -->
-      <div class="game-card card-flipped">
-        <div class="card-inner">
-          <div class="card-back">
-            <div class="romantic-pattern absolute inset-0"></div>
-            <span class="material-symbols-outlined" data-icon="favorite">favorite</span>
-          </div>
-          <div class="card-front">
-            <span class="material-symbols-outlined" data-icon="volunteer_activism">volunteer_activism</span>
-          </div>
-        </div>
-      </div>
-      <!-- Card 3 -->
-      <div class="game-card">
-        <div class="card-inner">
-          <div class="card-back">
-            <div class="romantic-pattern absolute inset-0"></div>
-            <span class="material-symbols-outlined" data-icon="favorite">favorite</span>
-          </div>
-          <div class="card-front">
-            <span class="material-symbols-outlined" data-icon="filter_vintage">filter_vintage</span>
-          </div>
-        </div>
-      </div>
-      <!-- Card 4 -->
-      <div class="game-card">
-        <div class="card-inner">
-          <div class="card-back">
-            <div class="romantic-pattern absolute inset-0"></div>
-            <span class="material-symbols-outlined" data-icon="favorite">favorite</span>
-          </div>
-          <div class="card-front">
-            <span class="material-symbols-outlined" data-icon="local_florist">local_florist</span>
-          </div>
-        </div>
-      </div>
-      <!-- Card 5 -->
-      <div class="game-card">
-        <div class="card-inner">
-          <div class="card-back">
-            <div class="romantic-pattern absolute inset-0"></div>
-            <span class="material-symbols-outlined" data-icon="favorite">favorite</span>
-          </div>
-          <div class="card-front">
-            <span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
-          </div>
-        </div>
-      </div>
-      <!-- Card 6 -->
-      <div class="game-card">
-        <div class="card-inner">
-          <div class="card-back">
-            <div class="romantic-pattern absolute inset-0"></div>
-            <span class="material-symbols-outlined" data-icon="favorite">favorite</span>
-          </div>
-          <div class="card-front">
-            <span class="material-symbols-outlined" data-icon="card_giftcard">card_giftcard</span>
-          </div>
-        </div>
-      </div>
-      <!-- Card 7 -->
-      <div class="game-card">
-        <div class="card-inner">
-          <div class="card-back">
-            <div class="romantic-pattern absolute inset-0"></div>
-            <span class="material-symbols-outlined" data-icon="favorite">favorite</span>
-          </div>
-          <div class="card-front">
-            <span class="material-symbols-outlined" data-icon="volunteer_activism">volunteer_activism</span>
-          </div>
-        </div>
-      </div>
-      <!-- Card 8 -->
-      <div class="game-card">
-        <div class="card-inner">
-          <div class="card-back">
-            <div class="romantic-pattern absolute inset-0"></div>
-            <span class="material-symbols-outlined" data-icon="favorite">favorite</span>
-          </div>
-          <div class="card-front">
-            <span class="material-symbols-outlined" data-icon="filter_vintage">filter_vintage</span>
-          </div>
-        </div>
-      </div>
-      <!-- Card 9 -->
-      <div class="game-card">
-        <div class="card-inner">
-          <div class="card-back">
-            <div class="romantic-pattern absolute inset-0"></div>
-            <span class="material-symbols-outlined" data-icon="favorite">favorite</span>
-          </div>
-          <div class="card-front">
-            <span class="material-symbols-outlined" data-icon="local_florist">local_florist</span>
-          </div>
-        </div>
-      </div>
-      <!-- Card 10 -->
-      <div class="game-card">
-        <div class="card-inner">
-          <div class="card-back">
-            <div class="romantic-pattern absolute inset-0"></div>
-            <span class="material-symbols-outlined" data-icon="favorite">favorite</span>
-          </div>
-          <div class="card-front">
-            <span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
-          </div>
-        </div>
-      </div>
-      <!-- Card 11 -->
-      <div class="game-card">
-        <div class="card-inner">
-          <div class="card-back">
-            <div class="romantic-pattern absolute inset-0"></div>
-            <span class="material-symbols-outlined" data-icon="favorite">favorite</span>
-          </div>
-          <div class="card-front">
-            <span class="material-symbols-outlined" data-icon="eco">eco</span>
-          </div>
-        </div>
-      </div>
-      <!-- Card 12 -->
-      <div class="game-card">
-        <div class="card-inner">
-          <div class="card-back">
-            <div class="romantic-pattern absolute inset-0"></div>
-            <span class="material-symbols-outlined" data-icon="favorite">favorite</span>
-          </div>
-          <div class="card-front">
-            <span class="material-symbols-outlined" data-icon="eco">eco</span>
-          </div>
-        </div>
-      </div>
+    <div class="game-grid" id="game-grid">
     </div>
 
     <!-- Action Button -->
