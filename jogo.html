@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/jogo.css">
+  <script src="js/utils.js"></script>
+  <script src="js/jogo.js" defer></script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col items-center">
+<!-- Top Navigation Shell -->
+<header class="bg-[#FFFDF9] dark:bg-stone-950 docked full-width top-0 border-b border-[#F4B8C4]/20 shadow-sm shadow-[#8B4C4C]/5 w-full z-50">
+<nav class="flex justify-between items-center w-full px-6 py-4 max-w-md mx-auto">
+<div class="flex items-center gap-2">
+<h1 class="text-lg font-semibold text-[#8B4C4C] dark:text-[#F4B8C4] font-['Plus_Jakarta_Sans'] tracking-tight">A Love Letter to Memory</h1>
+</div>
+</nav>
+</header>
+<!-- Main Game Canvas -->
+<main class="flex-1 w-full max-w-md px-container-padding pt-lg pb-xl flex flex-col items-center">
+<!-- Game Header / Stats -->
+<div class="w-full flex justify-between items-end mb-lg">
+<div class="bg-surface-container-high px-md py-xs rounded-xl shadow-sm border border-surface-variant/30">
+<p class="font-label-lg text-label-lg text-primary">Tentativas: <span class="text-secondary">0</span></p>
+</div>
+</div>
+<!-- Dynamic Message Area -->
+<div class="w-full bg-primary-container/10 border border-primary-container/20 py-sm px-md rounded-lg mb-md text-center">
+<p class="font-body-md text-body-md text-on-primary-container italic">Encontre os pares para revelar as memórias...</p>
+</div>
+<!-- Memory Grid (4x3) -->
+<div class="grid grid-cols-3 gap-grid-gutter w-full aspect-[3/4] mb-lg">
+<!-- Card 1 -->
+<div class="relative group cursor-pointer perspective-1000">
+<div class="card-inner relative w-full h-full shadow-sm rounded-lg">
+<div class="card-back absolute inset-0 bg-surface-container-highest rounded-lg flex items-center justify-center overflow-hidden border border-primary-container/20">
+<div class="romantic-pattern absolute inset-0"></div>
+<span class="material-symbols-outlined text-primary/40 text-4xl" data-icon="favorite">favorite</span>
+</div>
+<div class="card-front absolute inset-0 bg-surface-container-lowest rounded-lg flex items-center justify-center border border-primary-container/40">
+<span class="material-symbols-outlined text-secondary text-5xl" data-icon="card_giftcard">card_giftcard</span>
+</div>
+</div>
+</div>
+<!-- Card 2 (Flipped Example) -->
+<div class="relative group cursor-pointer perspective-1000 card-flipped">
+<div class="card-inner relative w-full h-full shadow-sm rounded-lg">
+<div class="card-back absolute inset-0 bg-surface-container-highest rounded-lg flex items-center justify-center overflow-hidden border border-primary-container/20">
+<div class="romantic-pattern absolute inset-0"></div>
+<span class="material-symbols-outlined text-primary/40 text-4xl" data-icon="favorite">favorite</span>
+</div>
+<div class="card-front absolute inset-0 bg-surface-container-lowest rounded-lg flex items-center justify-center border-2 border-secondary shadow-[0_0_15px_rgba(162,60,63,0.15)]">
+<span class="material-symbols-outlined text-secondary text-5xl" data-icon="volunteer_activism">volunteer_activism</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="relative group cursor-pointer perspective-1000">
+<div class="card-inner relative w-full h-full shadow-sm rounded-lg">
+<div class="card-back absolute inset-0 bg-surface-container-highest rounded-lg flex items-center justify-center overflow-hidden border border-primary-container/20">
+<div class="romantic-pattern absolute inset-0"></div>
+<span class="material-symbols-outlined text-primary/40 text-4xl" data-icon="favorite">favorite</span>
+</div>
+<div class="card-front absolute inset-0 bg-surface-container-lowest rounded-lg flex items-center justify-center border border-primary-container/40">
+<span class="material-symbols-outlined text-secondary text-5xl" data-icon="filter_vintage">filter_vintage</span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="relative group cursor-pointer perspective-1000">
+<div class="card-inner relative w-full h-full shadow-sm rounded-lg">
+<div class="card-back absolute inset-0 bg-surface-container-highest rounded-lg flex items-center justify-center overflow-hidden border border-primary-container/20">
+<div class="romantic-pattern absolute inset-0"></div>
+<span class="material-symbols-outlined text-primary/40 text-4xl" data-icon="favorite">favorite</span>
+</div>
+<div class="card-front absolute inset-0 bg-surface-container-lowest rounded-lg flex items-center justify-center border border-primary-container/40">
+<span class="material-symbols-outlined text-secondary text-5xl" data-icon="local_florist">local_florist</span>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="relative group cursor-pointer perspective-1000">
+<div class="card-inner relative w-full h-full shadow-sm rounded-lg">
+<div class="card-back absolute inset-0 bg-surface-container-highest rounded-lg flex items-center justify-center overflow-hidden border border-primary-container/20">
+<div class="romantic-pattern absolute inset-0"></div>
+<span class="material-symbols-outlined text-primary/40 text-4xl" data-icon="favorite">favorite</span>
+</div>
+<div class="card-front absolute inset-0 bg-surface-container-lowest rounded-lg flex items-center justify-center border border-primary-container/40">
+<span class="material-symbols-outlined text-secondary text-5xl" data-icon="auto_awesome">auto_awesome</span>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="relative group cursor-pointer perspective-1000">
+<div class="card-inner relative w-full h-full shadow-sm rounded-lg">
+<div class="card-back absolute inset-0 bg-surface-container-highest rounded-lg flex items-center justify-center overflow-hidden border border-primary-container/20">
+<div class="romantic-pattern absolute inset-0"></div>
+<span class="material-symbols-outlined text-primary/40 text-4xl" data-icon="favorite">favorite</span>
+</div>
+<div class="card-front absolute inset-0 bg-surface-container-lowest rounded-lg flex items-center justify-center border border-primary-container/40">
+<span class="material-symbols-outlined text-secondary text-5xl" data-icon="card_giftcard">card_giftcard</span>
+</div>
+</div>
+</div>
+<!-- Card 7 -->
+<div class="relative group cursor-pointer perspective-1000">
+<div class="card-inner relative w-full h-full shadow-sm rounded-lg">
+<div class="card-back absolute inset-0 bg-surface-container-highest rounded-lg flex items-center justify-center overflow-hidden border border-primary-container/20">
+<div class="romantic-pattern absolute inset-0"></div>
+<span class="material-symbols-outlined text-primary/40 text-4xl" data-icon="favorite">favorite</span>
+</div>
+<div class="card-front absolute inset-0 bg-surface-container-lowest rounded-lg flex items-center justify-center border border-primary-container/40">
+<span class="material-symbols-outlined text-secondary text-5xl" data-icon="volunteer_activism">volunteer_activism</span>
+</div>
+</div>
+</div>
+<!-- Card 8 -->
+<div class="relative group cursor-pointer perspective-1000">
+<div class="card-inner relative w-full h-full shadow-sm rounded-lg">
+<div class="card-back absolute inset-0 bg-surface-container-highest rounded-lg flex items-center justify-center overflow-hidden border border-primary-container/20">
+<div class="romantic-pattern absolute inset-0"></div>
+<span class="material-symbols-outlined text-primary/40 text-4xl" data-icon="favorite">favorite</span>
+</div>
+<div class="card-front absolute inset-0 bg-surface-container-lowest rounded-lg flex items-center justify-center border border-primary-container/40">
+<span class="material-symbols-outlined text-secondary text-5xl" data-icon="filter_vintage">filter_vintage</span>
+</div>
+</div>
+</div>
+<!-- Card 9 -->
+<div class="relative group cursor-pointer perspective-1000">
+<div class="card-inner relative w-full h-full shadow-sm rounded-lg">
+<div class="card-back absolute inset-0 bg-surface-container-highest rounded-lg flex items-center justify-center overflow-hidden border border-primary-container/20">
+<div class="romantic-pattern absolute inset-0"></div>
+<span class="material-symbols-outlined text-primary/40 text-4xl" data-icon="favorite">favorite</span>
+</div>
+<div class="card-front absolute inset-0 bg-surface-container-lowest rounded-lg flex items-center justify-center border border-primary-container/40">
+<span class="material-symbols-outlined text-secondary text-5xl" data-icon="local_florist">local_florist</span>
+</div>
+</div>
+</div>
+<!-- Card 10 -->
+<div class="relative group cursor-pointer perspective-1000">
+<div class="card-inner relative w-full h-full shadow-sm rounded-lg">
+<div class="card-back absolute inset-0 bg-surface-container-highest rounded-lg flex items-center justify-center overflow-hidden border border-primary-container/20">
+<div class="romantic-pattern absolute inset-0"></div>
+<span class="material-symbols-outlined text-primary/40 text-4xl" data-icon="favorite">favorite</span>
+</div>
+<div class="card-front absolute inset-0 bg-surface-container-lowest rounded-lg flex items-center justify-center border border-primary-container/40">
+<span class="material-symbols-outlined text-secondary text-5xl" data-icon="auto_awesome">auto_awesome</span>
+</div>
+</div>
+</div>
+<!-- Card 11 -->
+<div class="relative group cursor-pointer perspective-1000">
+<div class="card-inner relative w-full h-full shadow-sm rounded-lg">
+<div class="card-back absolute inset-0 bg-surface-container-highest rounded-lg flex items-center justify-center overflow-hidden border border-primary-container/20">
+<div class="romantic-pattern absolute inset-0"></div>
+<span class="material-symbols-outlined text-primary/40 text-4xl" data-icon="favorite">favorite</span>
+</div>
+<div class="card-front absolute inset-0 bg-surface-container-lowest rounded-lg flex items-center justify-center border border-primary-container/40">
+<span class="material-symbols-outlined text-secondary text-5xl" data-icon="eco">eco</span>
+</div>
+</div>
+</div>
+<!-- Card 12 -->
+<div class="relative group cursor-pointer perspective-1000">
+<div class="card-inner relative w-full h-full shadow-sm rounded-lg">
+<div class="card-back absolute inset-0 bg-surface-container-highest rounded-lg flex items-center justify-center overflow-hidden border border-primary-container/20">
+<div class="romantic-pattern absolute inset-0"></div>
+<span class="material-symbols-outlined text-primary/40 text-4xl" data-icon="favorite">favorite</span>
+</div>
+<div class="card-front absolute inset-0 bg-surface-container-lowest rounded-lg flex items-center justify-center border border-primary-container/40">
+<span class="material-symbols-outlined text-secondary text-5xl" data-icon="eco">eco</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<div class="w-full mt-auto">
+<button class="w-full bg-primary-container text-on-primary-container font-label-lg text-label-lg py-md rounded-full shadow-md hover:opacity-90 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="restart_alt">restart_alt</span>
+                Reiniciar jogo
+            </button>
+</div>
+</main>
+<!-- Bottom Navigation Shell -->
+<footer class="fixed bottom-0 left-0 w-full z-50 bg-[#FFFDF9]/90 dark:bg-stone-950/90 backdrop-blur-md border-t border-[#F4B8C4]/30 shadow-[0_-4px_20px_rgba(139,76,76,0.08)] rounded-t-3xl">
+<div class="flex justify-around items-center px-8 pb-6 pt-3">
+<div class="flex flex-col items-center justify-center bg-[#F4B8C4]/20 text-[#8B4C4C] dark:text-[#F4B8C4] rounded-2xl p-3 scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#8B4C4C]/40 dark:text-[#F4B8C4]/40 p-3 hover:bg-[#F4B8C4]/10 rounded-2xl transition-all">
+<span class="material-symbols-outlined" data-icon="extension">extension</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#8B4C4C]/40 dark:text-[#F4B8C4]/40 p-3 hover:bg-[#F4B8C4]/10 rounded-2xl transition-all">
+<span class="material-symbols-outlined" data-icon="workspace_premium">workspace_premium</span>
+</div>
+</div>
+</footer>
+</body></html>

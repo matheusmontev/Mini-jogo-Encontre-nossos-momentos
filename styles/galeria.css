@@ -1,0 +1,7 @@
+body {
+            background-color: #fff8f7;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .memory-card-shadow {
+            shadow: 0 4px 20px rgba(244, 184, 196, 0.15);
+        }

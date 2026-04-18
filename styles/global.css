@@ -1,0 +1,20 @@
+/* global.css */
+body {
+  min-height: max(884px, 100dvh);
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+}
+
+/* Botões padrão / Utilitários globais identificados nas views */
+.soft-glow {
+    box-shadow: 0 10px 30px -5px rgba(162, 60, 63, 0.08);
+}
