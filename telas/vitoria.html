@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 
-<html lang="pt-BR"><head>
+<html lang="pt-br" class="light"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Fontes -->
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Config Tailwind ANTES do CDN -->
+<script src="../js/utils.js"></script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link rel="stylesheet" href="../styles/global.css">
-  <link rel="stylesheet" href="../styles/vitoria.css">
-  <script src="../data/memorias.js"></script>
-  <script src="../js/utils.js"></script>
-  <script src="../js/vitoria.js" defer></script>
+<!-- CSS customizado -->
+<link rel="stylesheet" href="../styles/global.css">
+<link rel="stylesheet" href="../styles/vitoria.css">
+<!-- Data e JS -->
+<script src="../data/memorias.js"></script>
+<script src="../js/vitoria.js" defer></script>
 </head>
 <body class="bg-background text-on-background font-body-md min-h-screen flex flex-col overflow-x-hidden">
 <!-- TopAppBar -->
-<header class="fixed bg-background dark:bg-stone-950 border-b border-outline/20 shadow-sm shadow-primary/5 docked full-width top-0 z-50">
+<header class="fixed bg-background border-b border-outline/20 shadow-sm shadow-primary/5 top-0 w-full z-50">
 <div class="flex justify-between items-center w-full px-6 py-4 max-w-md mx-auto">
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary dark:text-outline" data-icon="flutter_dash">flutter_dash</span>
-<h1 class="font-['Plus_Jakarta_Sans'] tracking-tight text-lg font-semibold text-primary dark:text-outline">A Love Letter to Memory</h1>
+<span class="material-symbols-outlined text-primary" data-icon="flutter_dash">flutter_dash</span>
+<h1 class="font-['Plus_Jakarta_Sans'] tracking-tight text-lg font-semibold text-primary">A Love Letter to Memory</h1>
 </div>
 </div>
 </header>

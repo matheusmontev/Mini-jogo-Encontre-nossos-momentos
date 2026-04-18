@@ -1,7 +1,6 @@
 // js/utils.js - Configuração Tailwind com paleta "Velvet Memory" do DESIGN.md
 
 tailwind.config = {
-        darkMode: "class",
         theme: {
           extend: {
             "colors": {

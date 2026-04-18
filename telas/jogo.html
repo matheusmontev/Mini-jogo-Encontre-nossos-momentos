@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 
-<html class="light" lang="pt-br"><head>
+<html lang="pt-br" class="light"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!-- Fontes -->
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Config Tailwind ANTES do CDN -->
+<script src="../js/utils.js"></script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link rel="stylesheet" href="../styles/global.css">
-  <link rel="stylesheet" href="../styles/jogo.css">
-  <script src="../data/memorias.js"></script>
-  <script src="../js/utils.js"></script>
-  <script src="../js/jogo.js" defer></script>
+<!-- CSS customizado -->
+<link rel="stylesheet" href="../styles/global.css">
+<link rel="stylesheet" href="../styles/jogo.css">
+<!-- Data e JS -->
+<script src="../data/memorias.js"></script>
+<script src="../js/jogo.js" defer></script>
 </head>
 <body class="bg-background text-on-background font-body-md min-h-screen flex flex-col items-center">
 <!-- Top Navigation Shell -->
-<header class="fixed bg-background dark:bg-stone-950 docked full-width top-0 border-b border-outline/20 shadow-sm shadow-primary/5 w-full z-50">
+<header class="fixed bg-background top-0 border-b border-outline/20 shadow-sm shadow-primary/5 w-full z-50">
 <nav class="flex justify-between items-center w-full px-6 py-4 max-w-md mx-auto">
 <div class="flex items-center gap-2">
-<h1 class="text-lg font-semibold text-primary dark:text-outline font-['Plus_Jakarta_Sans'] tracking-tight">A Love Letter to Memory</h1>
+<h1 class="text-lg font-semibold text-primary font-['Plus_Jakarta_Sans'] tracking-tight">A Love Letter to Memory</h1>
 </div>
 </nav>
 </header>
