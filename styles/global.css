@@ -14,7 +14,7 @@ body {
     direction: ltr;
 }
 
-/* Botões padrão / Utilitários globais identificados nas views */
+/* Sombra suave usando secondary da paleta Velvet Memory */
 .soft-glow {
     box-shadow: 0 10px 30px -5px rgba(122, 79, 109, 0.15);
 }
