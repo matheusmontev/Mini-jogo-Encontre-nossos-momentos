@@ -1,24 +1,212 @@
-.card-inner {
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    transform-style: preserve-3d;
-}
-.card-flipped .card-inner {
-    transform: rotateY(180deg);
-}
-.card-front, .card-back {
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-}
-.card-front {
-    transform: rotateY(180deg);
+/* jogo.css — Animações de flip das cartas e padrão romântico */
+
+/* Perspectiva 3D do container do card */
+.card-container {
+  perspective: 1000px;
 }
 
-/* Padrão romântico — cores da paleta Velvet Memory:
-   background: surface-container (#fceae9), dots: primary (#80515c) */
-.romantic-pattern {
-    background-color: #fceae9;
-    background-image: radial-gradient(#80515c 0.5px, transparent 0.5px), radial-gradient(#80515c 0.5px, #fceae9 0.5px);
-    background-size: 20px 20px;
-    background-position: 0 0, 10px 10px;
-    opacity: 0.2;
+.card-inner {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
 }
+
+.card-flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-front {
+  transform: rotateY(180deg);
+}
+
+/* Padrão de pontos românticos (costas da carta) */
+.romantic-pattern {
+  background-color: var(--surface-container);
+  background-image:
+    radial-gradient(var(--primary) 0.5px, transparent 0.5px),
+    radial-gradient(var(--primary) 0.5px, var(--surface-container) 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  opacity: 0.2;
+}
+
+/* Header fixo do jogo */
+.game-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  background-color: var(--background);
+  border-bottom: 1px solid rgba(131, 115, 118, 0.2);
+  box-shadow: 0 1px 2px 0 rgba(128, 81, 92, 0.05);
+}
+
+.game-header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 16px 24px;
+  max-width: 448px;
+  margin: 0 auto;
+}
+
+.game-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: -0.025em;
+}
+
+/* Canvas principal do jogo */
+.game-canvas {
+  flex: 1;
+  width: 100%;
+  max-width: 448px;
+  padding: 0 var(--container-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 96px;
+  padding-bottom: 128px;
+}
+
+/* Stats box */
+.game-stats {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--spacing-lg);
+}
+
+.game-stats-box {
+  background-color: var(--surface-container-high);
+  padding: var(--spacing-md) var(--spacing-xs);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(240, 223, 222, 0.3);
+  padding: var(--spacing-xs) var(--spacing-md);
+}
+
+.game-stats-text {
+  color: var(--primary);
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+/* Mensagem dinâmica */
+.game-message {
+  width: 100%;
+  background-color: rgba(244, 184, 196, 0.1);
+  border: 1px solid rgba(244, 184, 196, 0.2);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+.game-message-text {
+  color: var(--on-primary-container);
+  font-style: italic;
+  font-size: 0.875rem;
+}
+
+/* Grid das cartas */
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--grid-gutter);
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  margin-bottom: var(--spacing-lg);
+}
+
+@media (min-width: 640px) {
+  .game-grid {
+    grid-template-columns: repeat(4, 1fr);
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* Card wrapper */
+.game-card {
+  position: relative;
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+.game-card .card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border-radius: var(--radius-lg);
+}
+
+/* Costas da carta */
+.game-card .card-back {
+  position: absolute;
+  inset: 0;
+  background-color: var(--surface-container-highest);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid rgba(244, 184, 196, 0.2);
+}
+
+.game-card .card-back .material-symbols-outlined {
+  color: rgba(128, 81, 92, 0.4);
+  font-size: 2.25rem;
+}
+
+/* Frente da carta */
+.game-card .card-front {
+  position: absolute;
+  inset: 0;
+  background-color: var(--surface-container-lowest);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(244, 184, 196, 0.4);
+}
+
+.game-card .card-front .material-symbols-outlined {
+  color: var(--secondary);
+  font-size: 3rem;
+}
+
+/* Card revelado (flipped) com destaque */
+.game-card.card-flipped .card-front {
+  border: 2px solid var(--secondary);
+  box-shadow: 0 0 15px rgba(162, 60, 63, 0.15);
+}
+
+/* Botão reiniciar */
+.game-restart-btn {
+  width: 100%;
+  background-color: var(--primary-container);
+  color: var(--on-primary-container);
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: var(--spacing-md) 0;
+  border-radius: 9999px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.game-restart-btn:hover { opacity: 0.9; }
+.game-restart-btn:active { transform: scale(0.98); }

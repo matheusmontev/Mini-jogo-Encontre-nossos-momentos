@@ -1,11 +1,259 @@
+/* vitoria.css — Tela de vitória: glass effect, heart float, decorações */
+
 .glass-effect {
-      backdrop-filter: blur(12px);
-      background: rgba(255, 248, 247, 0.8);
-    }
-    .heart-float {
-      animation: float 3s ease-in-out infinite;
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 248, 247, 0.8);
+}
+
+.heart-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Header fixo da vitória */
+.vitoria-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  background-color: var(--background);
+  border-bottom: 1px solid rgba(131, 115, 118, 0.2);
+  box-shadow: 0 1px 2px 0 rgba(128, 81, 92, 0.05);
+}
+
+.vitoria-header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 16px 24px;
+  max-width: 448px;
+  margin: 0 auto;
+}
+
+.vitoria-header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vitoria-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: -0.025em;
+}
+
+/* Canvas principal vitória */
+.vitoria-canvas {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--container-padding);
+  position: relative;
+  padding-top: 96px;
+  padding-bottom: 128px;
+}
+
+/* Elementos decorativos de fundo */
+.vitoria-bg-deco {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.vitoria-deco-icon {
+  position: absolute;
+  opacity: 0.1;
+  color: var(--primary);
+}
+
+.vitoria-deco-icon-top {
+  top: 40px;
+  left: 40px;
+}
+
+.vitoria-deco-icon-bottom {
+  bottom: 80px;
+  right: 40px;
+}
+
+/* Vessel de sucesso */
+.vitoria-vessel {
+  max-width: 448px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Imagem hero de celebração */
+.vitoria-hero {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 320px;
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+}
+
+.vitoria-hero-blur {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(244, 184, 196, 0.2);
+  border-radius: 9999px;
+  transform: scale(1.1);
+  filter: blur(16px);
+}
+
+.vitoria-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 9999px;
+  box-shadow: 0 20px 25px -5px rgba(162, 60, 63, 0.1);
+  border: 4px solid var(--surface-container-lowest);
+  position: relative;
+  z-index: 10;
+}
+
+.vitoria-heart-badge {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  background: white;
+  padding: 12px;
+  border-radius: 9999px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  z-index: 20;
+}
+
+.vitoria-heart-badge .material-symbols-outlined {
+  color: var(--secondary);
+  font-size: 1.875rem;
+}
+
+/* Grupo de mensagens */
+.vitoria-messages {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+.vitoria-label {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: var(--spacing-xs);
+}
+
+.vitoria-headline {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--on-surface);
+  line-height: 1.25;
+  padding: 0 16px;
+}
+
+.vitoria-body {
+  font-size: 1rem;
+  color: var(--on-surface-variant);
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+/* Stats Bento */
+.vitoria-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-sm);
+  width: 100%;
+  margin-bottom: var(--spacing-lg);
+  padding: 0 16px;
+}
+
+.vitoria-stat {
+  background-color: var(--surface-container-low);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--surface-variant);
+}
+
+.vitoria-stat-label {
+  color: var(--secondary);
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-bottom: var(--spacing-xs);
+}
+
+.vitoria-stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* Botões de ação */
+.vitoria-actions {
+  width: 100%;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.vitoria-btn-primary {
+  width: 100%;
+  background-color: var(--primary-container);
+  color: var(--on-primary-fixed-variant);
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 16px 0;
+  border-radius: 9999px;
+  box-shadow: 0 4px 6px rgba(128, 81, 92, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.vitoria-btn-primary:hover { opacity: 0.9; }
+.vitoria-btn-primary:active { transform: scale(0.95); }
+
+.vitoria-btn-secondary {
+  width: 100%;
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 16px 0;
+  border-radius: 9999px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.vitoria-btn-secondary:hover {
+  background-color: rgba(162, 60, 63, 0.05);
+}

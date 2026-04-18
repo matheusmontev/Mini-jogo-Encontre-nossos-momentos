@@ -1,7 +1,157 @@
-body {
-    background-color: #fff8f7;
-    font-family: 'Plus Jakarta Sans', sans-serif;
+/* galeria.css — Estilos exclusivos dos cards de memória da galeria */
+
+/* Header fixo da galeria */
+.galeria-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  height: 64px;
+  background-color: var(--background);
+  border-bottom: 1px solid rgba(131, 115, 118, 0.3);
+  box-shadow: 0 1px 2px 0 rgba(128, 81, 92, 0.05);
 }
-.memory-card-shadow {
-    box-shadow: 0 4px 20px rgba(122, 79, 109, 0.12);
+
+.galeria-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.galeria-back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 9999px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.galeria-back-btn:hover {
+  background-color: rgba(128, 81, 92, 0.1);
+}
+
+.galeria-header-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--on-background);
+  letter-spacing: -0.025em;
+}
+
+.galeria-header-fav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 9999px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.galeria-header-fav:hover {
+  background-color: rgba(128, 81, 92, 0.1);
+}
+
+/* Container principal */
+.galeria-main {
+  max-width: 672px;
+  margin: 0 auto;
+  padding: 96px var(--container-padding) 128px;
+}
+
+/* Seção de texto do topo */
+.galeria-intro {
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.galeria-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  margin-bottom: var(--spacing-base);
+  background-color: rgba(244, 184, 196, 0.3);
+  color: var(--on-primary-container);
+  border-radius: var(--radius-xl);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.galeria-heading {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--on-surface);
+  margin-bottom: var(--spacing-xs);
+  font-style: italic;
+}
+
+.galeria-description {
+  font-size: 1rem;
+  color: var(--on-surface-variant);
+  max-width: 448px;
+  margin: 0 auto;
+}
+
+/* Lista de memórias */
+.galeria-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--grid-gutter);
+}
+
+/* Card de memória individual */
+.memory-card {
+  background-color: var(--surface-container-lowest);
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 4px 20px rgba(232, 196, 200, 0.12);
+  border: 1px solid rgba(131, 115, 118, 0.2);
+}
+
+.memory-card-images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-base);
+  margin-bottom: var(--spacing-sm);
+}
+
+.memory-card-img-wrapper {
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: var(--surface-container);
+}
+
+.memory-card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.memory-card-text {
+  padding: var(--spacing-xs);
+  text-align: center;
+}
+
+.memory-card-title {
+  font-size: 18px;
+  color: var(--primary);
+  font-style: italic;
+  font-weight: 600;
+}
+
+.memory-card-date {
+  font-size: 0.75rem;
+  color: var(--on-surface-variant);
+  opacity: 0.6;
+  font-weight: 500;
 }

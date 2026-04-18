@@ -1,187 +1,120 @@
 <!DOCTYPE html>
-
-<html lang="pt-br" class="light"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<!-- Fontes -->
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Config Tailwind ANTES do CDN -->
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          "background":               "#fff8f7",
-          "on-background":            "#221919",
-          "surface":                  "#fff8f7",
-          "surface-dim":              "#e7d6d6",
-          "surface-bright":           "#fff8f7",
-          "surface-container-lowest": "#ffffff",
-          "surface-container-low":    "#fff0f0",
-          "surface-container":        "#fceae9",
-          "surface-container-high":   "#f6e4e4",
-          "surface-container-highest":"#f0dfde",
-          "surface-variant":          "#f0dfde",
-          "surface-tint":             "#80515c",
-          "on-surface":               "#221919",
-          "on-surface-variant":       "#504446",
-          "inverse-surface":          "#382e2e",
-          "inverse-on-surface":       "#feedec",
-          "outline":                  "#837376",
-          "outline-variant":          "#d4c2c4",
-          "primary":                  "#80515c",
-          "on-primary":               "#ffffff",
-          "primary-container":        "#f4b8c4",
-          "on-primary-container":     "#32101a",
-          "primary-fixed":            "#ffd9e0",
-          "primary-fixed-dim":        "#f3b7c3",
-          "on-primary-fixed":         "#32101a",
-          "on-primary-fixed-variant": "#653a44",
-          "inverse-primary":          "#f3b7c3",
-          "secondary":                "#a23c3f",
-          "on-secondary":             "#ffffff",
-          "secondary-container":      "#ffdad8",
-          "on-secondary-container":   "#410007",
-          "secondary-fixed":          "#ffdad8",
-          "secondary-fixed-dim":      "#ffb3b1",
-          "on-secondary-fixed":       "#410007",
-          "on-secondary-fixed-variant":"#832429",
-          "tertiary":                 "#615e57",
-          "on-tertiary":              "#ffffff",
-          "tertiary-container":       "#ccc7bf",
-          "on-tertiary-container":    "#56534c",
-          "error":                    "#ba1a1a",
-          "on-error":                 "#ffffff",
-          "error-container":          "#ffdad6",
-          "on-error-container":       "#93000a"
-        },
-        spacing: {
-          "xs":                "4px",
-          "sm":                "12px",
-          "base":              "8px",
-          "md":                "24px",
-          "lg":                "40px",
-          "xl":                "64px",
-          "container-padding": "24px",
-          "grid-gutter":       "16px"
-        },
-        borderRadius: {
-          "sm":      "0.25rem",
-          "DEFAULT": "0.5rem",
-          "md":      "0.75rem",
-          "lg":      "1rem",
-          "xl":      "1.5rem",
-          "full":    "9999px"
-        },
-        fontFamily: {
-          sans: ["Plus Jakarta Sans", "sans-serif"]
-        }
-      }
-    }
-  }
-</script>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- CSS customizado -->
-<link rel="stylesheet" href="../styles/global.css">
-<link rel="stylesheet" href="../styles/galeria.css">
-<!-- Data e JS -->
-<script src="../data/memorias.js"></script>
-<script src="../js/galeria.js" defer></script>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Galeria de Memórias</title>
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <!-- CSS -->
+  <link rel="stylesheet" href="../styles/global.css">
+  <link rel="stylesheet" href="../styles/galeria.css">
+  <!-- Data e JS -->
+  <script src="../data/memorias.js"></script>
+  <script src="../js/galeria.js" defer></script>
 </head>
-<body class="bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container">
-<!-- TopAppBar -->
-<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-background border-b border-outline/30 shadow-sm shadow-primary/5">
-<div class="flex items-center gap-4">
-<a href="../index.html" class="flex items-center justify-center p-2 rounded-full hover:bg-primary/10 transition-colors"><span class="material-symbols-outlined">arrow_back</span></a>
-<h1 class="font-plus-jakarta-sans text-xl font-semibold text-on-background tracking-tight">Nossa Galeria</h1>
-</div>
-<button class="flex items-center justify-center p-2 rounded-full hover:bg-primary/10 transition-colors">
-<span class="material-symbols-outlined text-on-background" style="font-variation-settings: 'FILL' 1;">favorite</span>
-</button>
-</header>
-<main class="max-w-2xl mx-auto px-container-padding pt-24 pb-32">
-<!-- Header Text Section -->
-<div class="mb-lg text-center">
-<span class="inline-block px-3 py-1 mb-base bg-primary-container/30 text-on-primary-container rounded-xl font-label-lg text-label-sm uppercase">Minha Galeria</span>
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-xs italic">Nossa Galeria</h2>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-md mx-auto">Cada par encontrado é um fragmento da nossa história guardado com carinho.</p>
-</div>
-<!-- Gallery List -->
-<div class="flex flex-col gap-grid-gutter">
-<!-- Memory Card 1 -->
-<article class="bg-surface-container-lowest p-sm rounded-xl shadow-[0_4px_20px_rgba(232, 196, 200, 0.12)] border border-outline/20">
-<div class="grid grid-cols-2 gap-base mb-sm">
-<div class="aspect-square rounded-lg overflow-hidden bg-surface-container">
-<img class="w-full h-full object-cover" data-alt="close-up of two steaming coffee cups on a wooden table in a sunlit cozy cafe atmosphere with soft bokeh" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKq3tZZMIVBudgU0MAZ3K1VqzFlvTa8Ux6yo6Ud7bW2TWSysatbVXQg2ZXNVwySBVIiOE71ong3Zazhxe64FMGpNT8dUilgqCKhr3YJXOFH5xURZQptK1jcvQksY_N54Dw_06ZsWIMidxyZUNz1X1b_MVaJ453iqwidBmjSZYcVDNYI_k5ahfFgLjdCke7xKKnPmApKrgPzWlv_KMtBPDTQonuhjpEewTqijzACeOHfWfG0CQzw3FU5sdcpNzg8bIUNHfMCvOniuM"/>
-</div>
-<div class="aspect-square rounded-lg overflow-hidden bg-surface-container">
-<img class="w-full h-full object-cover" data-alt="macro shot of freshly roasted coffee beans and a vintage grinder in a warm golden morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDRvtYkXjC8ZYY7l1XSEMWnFUj_XE5HwZ4dc3bsaZSHTt6OiXcqe4M_8Qi6bEK5yxRPMrvUt7IQgxJPbIrjE6fW7sxfNhoaiRz8NJ9csMuwt-0I5ds35PKax89oHSEhcBnolK0oc6vOX7NC2A-BmnkPpBJAgmhIhEkIUVzXHIrktPPqGItUUNSJ2D-k_m8dvU3c7cn3GLt2UUC1pkI1j8hpdLWORd3O9YN-27mjbttIyj21-XG0KRdmSiaSoW5GMb050kSadkW7Ho"/>
-</div>
-</div>
-<div class="px-xs pb-xs text-center">
-<p class="font-headline-md text-[18px] text-primary italic">Nosso primeiro café juntos</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">12 de Outubro de 2023</p>
-</div>
-</article>
-<!-- Memory Card 2 -->
-<article class="bg-surface-container-lowest p-sm rounded-xl shadow-[0_4px_20px_rgba(232, 196, 200, 0.12)] border border-outline/20">
-<div class="grid grid-cols-2 gap-base mb-sm">
-<div class="aspect-square rounded-lg overflow-hidden bg-surface-container">
-<img class="w-full h-full object-cover" data-alt="vibrant sunset over the sea with golden and pink hues reflecting on the calm water surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM1xvwp2VbqbnJySxGOSFOZZJaXhDfr7XMW6K6fqDMgn6u1elR1VpfLR31KFhjiZdBW34Ngw10hmqj1g__coBDdH9NmEzxELHDWsUsVbD83xMutxY1EUuxhB-W2zhXxetkcK8Z9Qrb8mDrI43B5YlJiVxcqiDhL39FAS5KyDCE3ebjsu_hLetBMj_OGMGlnNGxJyGR8Zmf1ggs_EzgGzEPxib3Zrekauml-4Mt7T2BiYw-yCd9k0V1r2w9dNG4nBvMSscclFt46iE"/>
-</div>
-<div class="aspect-square rounded-lg overflow-hidden bg-surface-container">
-<img class="w-full h-full object-cover" data-alt="two silhouetted figures walking hand-in-hand along a sandy beach during a warm tropical sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVE_riNuhFHTYfKowgbN53JCPKhzDvN2aJi6Ri0YAy-hvUa9PCEo0vsAZwbuOxLuEYAKuf7Cw9Xh51c0r8JwEerDhE_z6aVucw0LOtU61MfTtyP5g_vEYT_8CjL3rOidNBeyp0VV4uqtrH4r1vcqnwOxr6bwZZJJnEk7rzhTEbtgU_QYr9_qyPX8pjGzKMk-hQv-Ns65cFf8-tQvOcT_k3Bvnf5P6IZbUtrYatEYantY2-cm8jglEEDvRJscRPsmqV8uBsHrLb_jk"/>
-</div>
-</div>
-<div class="px-xs pb-xs text-center">
-<p class="font-headline-md text-[18px] text-primary italic">Pôr do sol inesquecível</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">24 de Novembro de 2023</p>
-</div>
-</article>
-<!-- Memory Card 3 -->
-<article class="bg-surface-container-lowest p-sm rounded-xl shadow-[0_4px_20px_rgba(232, 196, 200, 0.12)] border border-outline/20">
-<div class="grid grid-cols-2 gap-base mb-sm">
-<div class="aspect-square rounded-lg overflow-hidden bg-surface-container">
-<img class="w-full h-full object-cover" data-alt="beautiful bouquet of wildflowers in soft pastel colors arranged in a rustic glass jar on a window sill" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDOSSRCZJeloRIouY2VFPrqROQfg6E5EmR8wLdCzRB2e0WMM1zdHQadKS08E61y29YXbd6qVyS-mD0Obr8V46bhETeYB41vGE-1De9MNGBNQzKZtUEk5V0EmVA5YcNM89jWNpIq1_tCCo7CkUvaEZqJzmZgmnPpjV-BBxvU5U-hldyENmydcAgju5__Qr9OunY3ejgFiMtclfDLKPaJaAeCBV1LC4njcPQHGR4N2MYmunD_MelcvbnEMYl4sF262SIkXYw9Pbzb9Q"/>
-</div>
-<div class="aspect-square rounded-lg overflow-hidden bg-surface-container">
-<img class="w-full h-full object-cover" data-alt="close-up of a blooming spring flower with dew drops under soft morning sunlight in a romantic garden" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKhhagAkWqZPtWiCbPuYGRkqJRxEmpTcBgscM-gXk_jCYLGHbppj2ZoeyPMnR7IXF3s7nK7dJtz03l2nTMLc8PjkI7KYQGn6ZTDQflKwINGPCU4C2YpD4wnuVZCuxIBvy0iruVk5ebg0z307DTlMey0JzlvbvF9h6wWgfxgk4iqOBo7Wugq_WRZNcrP7sDlUGTyL40T1LQvniKc8h5NAeJQaTIIhFzup478ZSYUUooZS3TXYwGOkr0L3n6gkIDZk01A4jP3R85l4I"/>
-</div>
-</div>
-<div class="px-xs pb-xs text-center">
-<p class="font-headline-md text-[18px] text-primary italic">Flores de uma tarde de domingo</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">05 de Dezembro de 2023</p>
-</div>
-</article>
-<!-- Memory Card 4 -->
-<article class="bg-surface-container-lowest p-sm rounded-xl shadow-[0_4px_20px_rgba(232, 196, 200, 0.12)] border border-outline/20">
-<div class="grid grid-cols-2 gap-base mb-sm">
-<div class="aspect-square rounded-lg overflow-hidden bg-surface-container">
-<img class="w-full h-full object-cover" data-alt="ancient cobblestone street in a small European village during twilight with soft lantern lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMfKPyiwxe3_SBU-_GkzYOPt5_JSq79zqL-xuj43sTTkqR_gn9mgF5GZ3_TqCTd8KjDJG06r_sJtiTB04BR60DcQAksJ3Qi8NCFGwY7K9dGcUnOGZF33ujDtlZ76F5Gb_6WuJunS9T4hLukCHyK59zwFdDwiU9Q_nCGNtWbW7-pOBa6dBwdhmlnL8cLHJovkF9459qtuFsJIexirNHJ0CyR5ztxGXRRC9AC8TdGXm-iKLHGGqwoh3CLsPwp607qpVq4LtKdt23YbU"/>
-</div>
-<div class="aspect-square rounded-lg overflow-hidden bg-surface-container">
-<img class="w-full h-full object-cover" data-alt="close-up of a pair of vintage leather shoes on a stone street implying a long romantic walk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAppCo8TyptlCVHWK9UcElst7ao7smnL9wEX4R9P-Xtu_CH6U_wdF5QfBd399PKlNIJN3buvCPO8FwqT_PuWW67ERj_541iwZCcV_TQlk_iWG1Dr-qcfkYh0Gs43niedjk8sM95GMPqKptLA2iRvi0-O9ifp6SPX8lvAPAfYHmwMe9Zg3COdE6UyVDAzWvfmh_Jaiae2cHwU-4dXMlyOhpmoFcXceG0cus1K6eus6fojpSYEWtYqyruSfrg8R_O2Fg7u0ray8KxhxM"/>
-</div>
-</div>
-<div class="px-xs pb-xs text-center">
-<p class="font-headline-md text-[18px] text-primary italic">Nossa caminhada por Sintra</p>
-<p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">15 de Janeiro de 2024</p>
-</div>
-</article>
-</div>
-</main>
-<!-- BottomNavBar -->
+<body class="bg-background text-on-background">
 
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-8 pb-6 pt-3 bg-background/90 backdrop-blur-md rounded-t-3xl border-t border-outline/30 shadow-[0_-4px_20px_rgba(122,79,109,0.08)]">
-    <a href="../index.html" class="flex flex-col items-center justify-center rounded-2xl p-3 transition-transform text-primary/40 hover:bg-primary/10">
-        <span class="material-symbols-outlined" style="">home</span>
+  <!-- TopAppBar -->
+  <header class="galeria-header">
+    <div class="galeria-header-left">
+      <a href="../index.html" class="galeria-back-btn"><span class="material-symbols-outlined">arrow_back</span></a>
+      <h1 class="galeria-header-title">Nossa Galeria</h1>
+    </div>
+    <button class="galeria-header-fav">
+      <span class="material-symbols-outlined text-on-background" style="font-variation-settings: 'FILL' 1;">favorite</span>
+    </button>
+  </header>
+
+  <main class="galeria-main">
+    <!-- Header Text Section -->
+    <div class="galeria-intro">
+      <span class="galeria-badge">Minha Galeria</span>
+      <h2 class="galeria-heading">Nossa Galeria</h2>
+      <p class="galeria-description">Cada par encontrado é um fragmento da nossa história guardado com carinho.</p>
+    </div>
+
+    <!-- Gallery List -->
+    <div class="galeria-list">
+      <!-- Memory Card 1 -->
+      <article class="memory-card">
+        <div class="memory-card-images">
+          <div class="memory-card-img-wrapper">
+            <img data-alt="close-up of two steaming coffee cups on a wooden table in a sunlit cozy cafe atmosphere with soft bokeh" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKq3tZZMIVBudgU0MAZ3K1VqzFlvTa8Ux6yo6Ud7bW2TWSysatbVXQg2ZXNVwySBVIiOE71ong3Zazhxe64FMGpNT8dUilgqCKhr3YJXOFH5xURZQptK1jcvQksY_N54Dw_06ZsWIMidxyZUNz1X1b_MVaJ453iqwidBmjSZYcVDNYI_k5ahfFgLjdCke7xKKnPmApKrgPzWlv_KMtBPDTQonuhjpEewTqijzACeOHfWfG0CQzw3FU5sdcpNzg8bIUNHfMCvOniuM"/>
+          </div>
+          <div class="memory-card-img-wrapper">
+            <img data-alt="macro shot of freshly roasted coffee beans and a vintage grinder in a warm golden morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDRvtYkXjC8ZYY7l1XSEMWnFUj_XE5HwZ4dc3bsaZSHTt6OiXcqe4M_8Qi6bEK5yxRPMrvUt7IQgxJPbIrjE6fW7sxfNhoaiRz8NJ9csMuwt-0I5ds35PKax89oHSEhcBnolK0oc6vOX7NC2A-BmnkPpBJAgmhIhEkIUVzXHIrktPPqGItUUNSJ2D-k_m8dvU3c7cn3GLt2UUC1pkI1j8hpdLWORd3O9YN-27mjbttIyj21-XG0KRdmSiaSoW5GMb050kSadkW7Ho"/>
+          </div>
+        </div>
+        <div class="memory-card-text">
+          <p class="memory-card-title">Nosso primeiro café juntos</p>
+          <p class="memory-card-date">12 de Outubro de 2023</p>
+        </div>
+      </article>
+
+      <!-- Memory Card 2 -->
+      <article class="memory-card">
+        <div class="memory-card-images">
+          <div class="memory-card-img-wrapper">
+            <img data-alt="vibrant sunset over the sea with golden and pink hues reflecting on the calm water surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM1xvwp2VbqbnJySxGOSFOZZJaXhDfr7XMW6K6fqDMgn6u1elR1VpfLR31KFhjiZdBW34Ngw10hmqj1g__coBDdH9NmEzxELHDWsUsVbD83xMutxY1EUuxhB-W2zhXxetkcK8Z9Qrb8mDrI43B5YlJiVxcqiDhL39FAS5KyDCE3ebjsu_hLetBMj_OGMGlnNGxJyGR8Zmf1ggs_EzgGzEPxib3Zrekauml-4Mt7T2BiYw-yCd9k0V1r2w9dNG4nBvMSscclFt46iE"/>
+          </div>
+          <div class="memory-card-img-wrapper">
+            <img data-alt="two silhouetted figures walking hand-in-hand along a sandy beach during a warm tropical sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVE_riNuhFHTYfKowgbN53JCPKhzDvN2aJi6Ri0YAy-hvUa9PCEo0vsAZwbuOxLuEYAKuf7Cw9Xh51c0r8JwEerDhE_z6aVucw0LOtU61MfTtyP5g_vEYT_8CjL3rOidNBeyp0VV4uqtrH4r1vcqnwOxr6bwZZJJnEk7rzhTEbtgU_QYr9_qyPX8pjGzKMk-hQv-Ns65cFf8-tQvOcT_k3Bvnf5P6IZbUtrYatEYantY2-cm8jglEEDvRJscRPsmqV8uBsHrLb_jk"/>
+          </div>
+        </div>
+        <div class="memory-card-text">
+          <p class="memory-card-title">Pôr do sol inesquecível</p>
+          <p class="memory-card-date">24 de Novembro de 2023</p>
+        </div>
+      </article>
+
+      <!-- Memory Card 3 -->
+      <article class="memory-card">
+        <div class="memory-card-images">
+          <div class="memory-card-img-wrapper">
+            <img data-alt="beautiful bouquet of wildflowers in soft pastel colors arranged in a rustic glass jar on a window sill" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDOSSRCZJeloRIouY2VFPrqROQfg6E5EmR8wLdCzRB2e0WMM1zdHQadKS08E61y29YXbd6qVyS-mD0Obr8V46bhETeYB41vGE-1De9MNGBNQzKZtUEk5V0EmVA5YcNM89jWNpIq1_tCCo7CkUvaEZqJzmZgmnPpjV-BBxvU5U-hldyENmydcAgju5__Qr9OunY3ejgFiMtclfDLKPaJaAeCBV1LC4njcPQHGR4N2MYmunD_MelcvbnEMYl4sF262SIkXYw9Pbzb9Q"/>
+          </div>
+          <div class="memory-card-img-wrapper">
+            <img data-alt="close-up of a blooming spring flower with dew drops under soft morning sunlight in a romantic garden" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKhhagAkWqZPtWiCbPuYGRkqJRxEmpTcBgscM-gXk_jCYLGHbppj2ZoeyPMnR7IXF3s7nK7dJtz03l2nTMLc8PjkI7KYQGn6ZTDQflKwINGPCU4C2YpD4wnuVZCuxIBvy0iruVk5ebg0z307DTlMey0JzlvbvF9h6wWgfxgk4iqOBo7Wugq_WRZNcrP7sDlUGTyL40T1LQvniKc8h5NAeJQaTIIhFzup478ZSYUUooZS3TXYwGOkr0L3n6gkIDZk01A4jP3R85l4I"/>
+          </div>
+        </div>
+        <div class="memory-card-text">
+          <p class="memory-card-title">Flores de uma tarde de domingo</p>
+          <p class="memory-card-date">05 de Dezembro de 2023</p>
+        </div>
+      </article>
+
+      <!-- Memory Card 4 -->
+      <article class="memory-card">
+        <div class="memory-card-images">
+          <div class="memory-card-img-wrapper">
+            <img data-alt="ancient cobblestone street in a small European village during twilight with soft lantern lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMfKPyiwxe3_SBU-_GkzYOPt5_JSq79zqL-xuj43sTTkqR_gn9mgF5GZ3_TqCTd8KjDJG06r_sJtiTB04BR60DcQAksJ3Qi8NCFGwY7K9dGcUnOGZF33ujDtlZ76F5Gb_6WuJunS9T4hLukCHyK59zwFdDwiU9Q_nCGNtWbW7-pOBa6dBwdhmlnL8cLHJovkF9459qtuFsJIexirNHJ0CyR5ztxGXRRC9AC8TdGXm-iKLHGGqwoh3CLsPwp607qpVq4LtKdt23YbU"/>
+          </div>
+          <div class="memory-card-img-wrapper">
+            <img data-alt="close-up of a pair of vintage leather shoes on a stone street implying a long romantic walk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAppCo8TyptlCVHWK9UcElst7ao7smnL9wEX4R9P-Xtu_CH6U_wdF5QfBd399PKlNIJN3buvCPO8FwqT_PuWW67ERj_541iwZCcV_TQlk_iWG1Dr-qcfkYh0Gs43niedjk8sM95GMPqKptLA2iRvi0-O9ifp6SPX8lvAPAfYHmwMe9Zg3COdE6UyVDAzWvfmh_Jaiae2cHwU-4dXMlyOhpmoFcXceG0cus1K6eus6fojpSYEWtYqyruSfrg8R_O2Fg7u0ray8KxhxM"/>
+          </div>
+        </div>
+        <div class="memory-card-text">
+          <p class="memory-card-title">Nossa caminhada por Sintra</p>
+          <p class="memory-card-date">15 de Janeiro de 2024</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- Bottom Navigation -->
+  <nav class="nav-bar">
+    <a href="../index.html" class="nav-item">
+      <span class="material-symbols-outlined">home</span>
     </a>
-    <a href="jogo.html" class="flex flex-col items-center justify-center rounded-2xl p-3 transition-all text-primary/40 hover:bg-primary/10">
-        <span class="material-symbols-outlined" style="">extension</span>
+    <a href="jogo.html" class="nav-item">
+      <span class="material-symbols-outlined">extension</span>
     </a>
-    <a href="galeria.html" class="flex flex-col items-center justify-center rounded-2xl p-3 transition-all bg-primary/20 text-primary scale-110">
-        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+    <a href="galeria.html" class="nav-item nav-item-active">
+      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
     </a>
-</nav>
-</body></html>
+  </nav>
+
+</body>
+</html>
