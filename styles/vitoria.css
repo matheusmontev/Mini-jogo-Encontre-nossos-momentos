@@ -1,6 +1,6 @@
 .glass-effect {
       backdrop-filter: blur(12px);
-      background: rgba(255, 248, 247, 0.8);
+      background: rgba(253, 246, 238, 0.8);
     }
     .heart-float {
       animation: float 3s ease-in-out infinite;
