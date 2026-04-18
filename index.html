@@ -7,7 +7,80 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <!-- Config Tailwind ANTES do CDN -->
-<script src="js/utils.js"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          "background":               "#fff8f7",
+          "on-background":            "#221919",
+          "surface":                  "#fff8f7",
+          "surface-dim":              "#e7d6d6",
+          "surface-bright":           "#fff8f7",
+          "surface-container-lowest": "#ffffff",
+          "surface-container-low":    "#fff0f0",
+          "surface-container":        "#fceae9",
+          "surface-container-high":   "#f6e4e4",
+          "surface-container-highest":"#f0dfde",
+          "surface-variant":          "#f0dfde",
+          "surface-tint":             "#80515c",
+          "on-surface":               "#221919",
+          "on-surface-variant":       "#504446",
+          "inverse-surface":          "#382e2e",
+          "inverse-on-surface":       "#feedec",
+          "outline":                  "#837376",
+          "outline-variant":          "#d4c2c4",
+          "primary":                  "#80515c",
+          "on-primary":               "#ffffff",
+          "primary-container":        "#f4b8c4",
+          "on-primary-container":     "#32101a",
+          "primary-fixed":            "#ffd9e0",
+          "primary-fixed-dim":        "#f3b7c3",
+          "on-primary-fixed":         "#32101a",
+          "on-primary-fixed-variant": "#653a44",
+          "inverse-primary":          "#f3b7c3",
+          "secondary":                "#a23c3f",
+          "on-secondary":             "#ffffff",
+          "secondary-container":      "#ffdad8",
+          "on-secondary-container":   "#410007",
+          "secondary-fixed":          "#ffdad8",
+          "secondary-fixed-dim":      "#ffb3b1",
+          "on-secondary-fixed":       "#410007",
+          "on-secondary-fixed-variant":"#832429",
+          "tertiary":                 "#615e57",
+          "on-tertiary":              "#ffffff",
+          "tertiary-container":       "#ccc7bf",
+          "on-tertiary-container":    "#56534c",
+          "error":                    "#ba1a1a",
+          "on-error":                 "#ffffff",
+          "error-container":          "#ffdad6",
+          "on-error-container":       "#93000a"
+        },
+        spacing: {
+          "xs":                "4px",
+          "sm":                "12px",
+          "base":              "8px",
+          "md":                "24px",
+          "lg":                "40px",
+          "xl":                "64px",
+          "container-padding": "24px",
+          "grid-gutter":       "16px"
+        },
+        borderRadius: {
+          "sm":      "0.25rem",
+          "DEFAULT": "0.5rem",
+          "md":      "0.75rem",
+          "lg":      "1rem",
+          "xl":      "1.5rem",
+          "full":    "9999px"
+        },
+        fontFamily: {
+          sans: ["Plus Jakarta Sans", "sans-serif"]
+        }
+      }
+    }
+  }
+</script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <!-- CSS customizado -->
 <link rel="stylesheet" href="styles/global.css">
