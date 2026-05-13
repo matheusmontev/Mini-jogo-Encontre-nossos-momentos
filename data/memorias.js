@@ -2,7 +2,7 @@
 const MEMORIAS = [
   {
     id: 1,
-    foto1: "https://lh3.googleusercontent.com/aida-public/AB6AXuCKq3tZZMIVBudgU0MAZ3K1VqzFlvTa8Ux6yo6Ud7bW2TWSysatbVXQg2ZXNVwySBVIiOE71ong3Zazhxe64FMGpNT8dUilgqCKhr3YJXOFH5xURZQptK1jcvQksY_N54Dw_06ZsWIMidxyZUNz1X1b_MVaJ453iqwidBmjSZYcVDNYI_k5ahfFgLjdCke7xKKnPmApKrgPzWlv_KMtBPDTQonuhjpEewTqijzACeOHfWfG0CQzw3FU5sdcpNzg8bIUNHfMCvOniuM",
+    foto1: "",
     foto2: "https://lh3.googleusercontent.com/aida-public/AB6AXuBDRvtYkXjC8ZYY7l1XSEMWnFUj_XE5HwZ4dc3bsaZSHTt6OiXcqe4M_8Qi6bEK5yxRPMrvUt7IQgxJPbIrjE6fW7sxfNhoaiRz8NJ9csMuwt-0I5ds35PKax89oHSEhcBnolK0oc6vOX7NC2A-BmnkPpBJAgmhIhEkIUVzXHIrktPPqGItUUNSJ2D-k_m8dvU3c7cn3GLt2UUC1pkI1j8hpdLWORd3O9YN-27mjbttIyj21-XG0KRdmSiaSoW5GMb050kSadkW7Ho",
     mensagem: "Nosso primeiro café juntos ☕",
     data: "12 de Outubro de 2023"
